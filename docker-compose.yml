@@ -5,9 +5,9 @@ services:
       MYSQL_ROOT_PASSWORD: test-db
       MYSQL_USER: cats4ever
       MYSQL_PASSWORD: cats4life
-      MYSQL_DATABASE: recensement
       MARIADB_INITDB_ARGS: "--collation=utf8mb4_general_ci --character-set-server=utf8mb4"
     ports:
       - "3306:3306"
     volumes:
-      - ./data_tp_sql.sql:/docker-entrypoint-initdb.d/initial_script.sql
+      - ./recensement.sql:/docker-entrypoint-initdb.d/recensement_init.sql
+      - ./book.sql:/docker-entrypoint-initdb.d/book_init.sql
